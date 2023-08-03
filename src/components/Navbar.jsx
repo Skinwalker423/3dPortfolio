@@ -20,11 +20,18 @@ const Navbar = () => {
           }}
         >
           <img
-            src={artLogo}
+            src={logo}
             alt='art gonzalez logo'
-            width={50}
-            height={50}
+            width={65}
+            height={65}
+            className='w-9 h-9 object-contain'
           />
+          <p className='text-white text-[18px] font-bold cursor-pointer'>
+            Art Gonzalez
+            <span className='sm:block hidden orange-text-gradient'>
+              | Web Dev
+            </span>
+          </p>
         </Link>
       </div>
     </nav>

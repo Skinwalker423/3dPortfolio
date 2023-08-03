@@ -41,7 +41,7 @@ function App() {
         <Route path='/feedbacks' element={<Feedbacks />} />
         <Route path='/hero' element={<Hero />} />
         <Route path='/tech' element={<Tech />} />
-        <Route path='/works' element={<Works />} />
+        <Route path='/work' element={<Works />} />
         <Route
           path='/starscanvas'
           element={<StarsCanvas />}

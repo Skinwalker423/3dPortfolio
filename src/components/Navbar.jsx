@@ -40,9 +40,9 @@ const Navbar = () => {
                 to={`/${id}`}
                 className={`${
                   active === id
-                    ? "text-orange-500"
+                    ? "text-orange-500 border-b border-b-orange-500"
                     : "text-white"
-                } hover:text-orange-500`}
+                } hover:text-orange-500 text-[18px] font-medium cursor-pointer`}
                 onClick={() => setActive(id)}
                 key={id}
               >

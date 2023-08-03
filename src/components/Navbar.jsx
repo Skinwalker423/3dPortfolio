@@ -33,6 +33,20 @@ const Navbar = () => {
             </span>
           </p>
         </Link>
+        <ul className='list-none hidden sm:flex flex-row gap-10'>
+          {navLinks.map(({ title, id }) => {
+            return (
+              <li key={id}>
+                <a
+                  className='hover:text-orange-500'
+                  href={id}
+                >
+                  {title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </nav>
   );

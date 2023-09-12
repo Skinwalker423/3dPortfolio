@@ -22,7 +22,11 @@ const Computers = () => {
         groundColor={"black"}
       >
         <pointLight intensity={1} />
-        <primitive object={computer.scene} />
+        <primitive
+          object={computer.scene}
+          scale={0.75}
+          position={[0, -4, -1]}
+        />
       </hemisphereLight>
     </mesh>
   );

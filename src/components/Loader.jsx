@@ -1,7 +1,7 @@
 import React from "react";
 
 const CanvasLoader = () => {
-  return <div>Loader</div>;
+  return "loading...";
 };
 
 export default CanvasLoader;

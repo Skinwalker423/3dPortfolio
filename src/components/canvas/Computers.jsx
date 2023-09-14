@@ -12,9 +12,7 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Computers = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
+const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
@@ -24,8 +22,8 @@ const Computers = () => {
         groundColor={"black"}
       />
       <pointLight
-        position={[0.75, -0.5, 1]}
-        intensity={5}
+        position={isMobile ? [0.75, 1, 0] : [0.75, -0.5, 1]}
+        intensity={isMobile ? 2 : 5}
       />
       <spotLight
         position={[-20, 50, 10]}
@@ -37,22 +35,44 @@ const Computers = () => {
       />
       <primitive
         object={computer.scene}
-        scale={0.75}
-        position={[0, -3, -1]}
-        rotation={[-0.01, -0.2, -0.1]}
+        scale={isMobile ? 0.27 : 0.75}
+        position={isMobile ? [0, 0, -0.5] : [0, -3, -1]}
+        rotation={
+          isMobile
+            ? [-0.01, -0.2, -0.3]
+            : [-0.01, -0.2, -0.1]
+        }
       />
     </mesh>
   );
 };
 
 const ComputersCanvas = () => {
-  const mediaQuery = window.matchMedia("max-width: 500");
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (mediaQuery.matches) {
-      setIsMobile(mediaQuery.matches);
-    }
-  }, [mediaQuery]);
+    const mediaQuery = window.matchMedia(
+      "(max-width: 500px)"
+    );
+
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (e) => {
+      setIsMobile(e.matches);
+    };
+
+    mediaQuery.addEventListener(
+      "change",
+      handleMediaQueryChange
+    );
+
+    return () => {
+      mediaQuery.removeEventListener(
+        "change",
+        handleMediaQueryChange
+      );
+    };
+  }, []);
 
   return (
     <Canvas
@@ -67,7 +87,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers />
+        <Computers isMobile={isMobile} />
       </Suspense>
       <Preload all />
     </Canvas>

@@ -13,6 +13,8 @@ import {
 import CanvasLoader from "../Loader";
 
 const Computers = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
@@ -44,6 +46,14 @@ const Computers = () => {
 };
 
 const ComputersCanvas = () => {
+  const mediaQuery = window.matchMedia("max-width: 500");
+
+  useEffect(() => {
+    if (mediaQuery.matches) {
+      setIsMobile(mediaQuery.matches);
+    }
+  }, [mediaQuery]);
+
   return (
     <Canvas
       frameloop='demand'

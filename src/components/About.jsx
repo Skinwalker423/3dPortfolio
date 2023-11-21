@@ -26,6 +26,17 @@ const About = () => {
         also a highly motivated and results-oriented
         individual with a proven track record of success.
       </motion.p>
+      <div className='mt-20 flex flex-wrap gap-10'>
+        {services.map((service, i) => {
+          return (
+            <ServiceCard
+              key={service.title}
+              index={i}
+              {...service}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };

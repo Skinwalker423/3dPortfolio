@@ -22,7 +22,7 @@ const Navbar = () => {
           setToggle(false);
         }}
       >
-        <Link to={`/${id}`}>{title}</Link>
+        <Link to={`/#${id}`}>{title}</Link>
       </li>
     );
   });

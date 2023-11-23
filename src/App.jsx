@@ -1,5 +1,4 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
 import {
   Hero,
   About,
@@ -29,10 +28,10 @@ function App() {
         <StarsCanvas />
       </div>
 
-      <Routes>
+      {/* <Routes>
         <Route path='/' index />
 
-        <Route path='/about' element={<About />} />
+        <Route path='/#about' element={<About />} />
         <Route
           path='/experience'
           element={<Experience />}
@@ -46,7 +45,7 @@ function App() {
           path='/starscanvas'
           element={<StarsCanvas />}
         />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }

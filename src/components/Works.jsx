@@ -5,6 +5,7 @@ import { github } from "../assets";
 import SectionWrapper from "../hoc/SectionWrapper";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import ProjectCard from "./cards/ProjectCard";
 
 const Works = () => {
   return (
@@ -28,6 +29,17 @@ const Works = () => {
           work with different technologies, and manage
           projects effectively.
         </motion.p>
+      </div>
+      <div className='mt-20 flex flex-wrap gap-7'>
+        {projects.map((project, index) => {
+          return (
+            <ProjectCard
+              {...project}
+              index={index}
+              key={index}
+            />
+          );
+        })}
       </div>
     </>
   );

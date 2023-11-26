@@ -60,7 +60,7 @@ const ProjectCard = ({
                 key={name}
                 className={`text-[14px] ${color}`}
               >
-                {name}
+                #{name}
               </p>
             );
           })}

@@ -26,8 +26,9 @@ const Feedbacks = () => {
         {testimonials.map((testimonial, index) => {
           return (
             <TestimonialCard
-              key={index}
-              testimonial={testimonial}
+              key={testimonial.name}
+              index={index}
+              {...testimonial}
             />
           );
         })}

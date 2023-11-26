@@ -53,6 +53,18 @@ const ProjectCard = ({
             {description}
           </p>
         </div>
+        <div className='mt-4 flex flex-wrap gap-2'>
+          {tags.map(({ name, color }) => {
+            return (
+              <p
+                key={name}
+                className={`text-[14px] ${color}`}
+              >
+                {name}
+              </p>
+            );
+          })}
+        </div>
       </Tilt>
     </motion.div>
   );

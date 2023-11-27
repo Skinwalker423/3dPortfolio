@@ -11,7 +11,6 @@ const ProjectCard = ({
   index,
   link = "/",
 }) => {
-  console.log("index", index);
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}

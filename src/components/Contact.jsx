@@ -32,6 +32,58 @@ const Contact = () => {
           Get in Touch
         </p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
+
+        <form
+          ref={formRef}
+          className='mt-12 flex flex-col gap-8'
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor='name' className='flex flex-col'>
+            <span className='text-white'>Name</span>
+            <input
+              type='text'
+              name='name'
+              id='name'
+              value={form.name}
+              onChange={handleChange}
+              placeholder="What's your name?"
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+            />
+          </label>
+          <label htmlFor='email' className='flex flex-col'>
+            <span className='text-white'>Email</span>
+            <input
+              type='text'
+              name='email'
+              id='email'
+              value={form.email}
+              onChange={handleChange}
+              placeholder="What's your email?"
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+            />
+          </label>
+          <label
+            htmlFor='message'
+            className='flex flex-col'
+          >
+            <span className='text-white'>Message</span>
+            <textarea
+              rows={"7"}
+              name='message'
+              id='message'
+              value={form.message}
+              onChange={handleChange}
+              placeholder='Description'
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+            />
+          </label>
+          <button
+            className='bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-black-200'
+            type='submit'
+          >
+            {loading ? "Sending" : "Send"}
+          </button>
+        </form>
       </motion.div>
     </div>
   );

@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  Suspense,
-  useRef,
-} from "react";
+import React, { useState, Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Points,
@@ -12,12 +7,15 @@ import {
 } from "@react-three/drei";
 
 import * as random from "maath/random/dist/maath-random.esm";
+import CanvasLoader from "../Loader";
 
 const Stars = (props) => {
   const ref = useRef();
-  const sphere = random.inSphere(new Float32Array(5000), {
-    radius: 1.2,
-  });
+  const [sphere] = useState(() =>
+    random.inSphere(new Float32Array(3000), { radius: 1.2 })
+  );
+
+  console.log("sphere", sphere);
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
@@ -52,7 +50,7 @@ const StarsCanvas = () => {
           position: [0, 0, 1],
         }}
       >
-        <Suspense fallback={null}>
+        <Suspense fallback={<CanvasLoader />}>
           <Stars />
         </Suspense>
         <Preload all />

@@ -35,13 +35,9 @@ const Earth = ({ isMobile }) => {
       />
       <primitive
         object={earth.scene}
-        scale={isMobile ? 4.5 : 3.5}
-        position={isMobile ? [0, 0, 0] : [0, 0, 0]}
-        rotation={
-          isMobile
-            ? [-0.01, -0.2, -0.3]
-            : [-0.01, -0.2, -0.1]
-        }
+        scale={isMobile ? 3.25 : 2.5}
+        position-y={0}
+        rotation-y={0}
       />
     </mesh>
   );
@@ -78,7 +74,12 @@ const EarthCanvas = () => {
     <Canvas
       frameloop='demand'
       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{
+        position: [-4, 3, 6],
+        fov: 45,
+        near: 0.1,
+        far: 200,
+      }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
@@ -86,6 +87,7 @@ const EarthCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          autoRotate
         />
         <Earth isMobile={isMobile} />
       </Suspense>

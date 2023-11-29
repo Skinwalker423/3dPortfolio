@@ -17,10 +17,15 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  function handleChange(e) {}
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  }
   function handleSubmit(e) {
     e.preventDefault();
   }
+
+  console.log("form", form);
 
   return (
     <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>

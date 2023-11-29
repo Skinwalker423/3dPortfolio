@@ -27,8 +27,8 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        process.env.EMAILJS_SERVICE_ID,
-        process.env.EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Skinwalker",
@@ -36,7 +36,7 @@ const Contact = () => {
           to_email: "skinwalker42398@gmail.com",
           message: form.message,
         },
-        process.env.EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setLoading(false);
@@ -49,8 +49,6 @@ const Contact = () => {
       setLoading(false);
     }
   };
-
-  console.log("form", form);
 
   return (
     <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>

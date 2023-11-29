@@ -25,18 +25,29 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs.send(
-      process.env.EMAILJS_SERVICE_ID,
-      process.env.EMAILJS_TEMPLATE_ID,
-      {
-        from_name: form.name,
-        to_name: "Skinwalker",
-        from_email: form.email,
-        to_email: "skinwalker42398@gmail.com",
-        message: form.message,
-      },
-      process.env.EMAILJS_PUBLIC_KEY
-    );
+    try {
+      await emailjs.send(
+        process.env.EMAILJS_SERVICE_ID,
+        process.env.EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Skinwalker",
+          from_email: form.email,
+          to_email: "skinwalker42398@gmail.com",
+          message: form.message,
+        },
+        process.env.EMAILJS_PUBLIC_KEY
+      );
+
+      setLoading(false);
+      alert(
+        "Message sent. Thanks for taking the time to reach out."
+      );
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+      setLoading(false);
+    }
   };
 
   console.log("form", form);

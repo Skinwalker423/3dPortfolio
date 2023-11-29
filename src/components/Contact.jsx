@@ -17,13 +17,27 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-  }
-  function handleSubmit(e) {
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  }
+    setLoading(true);
+
+    emailjs.send(
+      process.env.EMAILJS_SERVICE_ID,
+      process.env.EMAILJS_TEMPLATE_ID,
+      {
+        from_name: form.name,
+        to_name: "Skinwalker",
+        from_email: form.email,
+        to_email: "skinwalker42398@gmail.com",
+        message: form.message,
+      },
+      process.env.EMAILJS_PUBLIC_KEY
+    );
+  };
 
   console.log("form", form);
 

@@ -27,6 +27,7 @@ import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import leftovers from "./leftovers.png";
 import bubbles from "./bubbles.png";
+import nike from "./nikeproj.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import artGonzLogo from "./art-gonzalez-logo.png";
@@ -62,6 +63,7 @@ export {
   carrent,
   jobit,
   leftovers,
+  nike,
   artLogo,
   artGonzLogo,
 };

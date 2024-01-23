@@ -24,6 +24,7 @@ import {
   leftovers,
   threejs,
   bubbles,
+  nike,
 } from "../assets";
 
 export const navLinks = [
@@ -33,8 +34,13 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "Experience",
   },
+  {
+    id: "projects",
+    title: "Projects",
+  },
+
   {
     id: "contact",
     title: "Contact",
@@ -245,7 +251,7 @@ const projects = [
       "https://github.com/Skinwalker423/bubbles",
   },
   {
-    name: "Trip Guide",
+    name: "Nike",
     description:
       "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
     tags: [
@@ -262,8 +268,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: leftovers,
-    source_code_link: "https://github.com/",
+    image: nike,
+    source_code_link:
+      "https://github.com/Skinwalker423/Nike",
   },
 ];
 

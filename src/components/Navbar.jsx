@@ -1,30 +1,24 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close, artLogo } from "../assets";
+import { menu, close, artLogo } from "../assets";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [active, setActive] = useState(null);
   const [toggle, setToggle] = useState(false);
 
   const navList = navLinks.map(({ title, id }) => {
     return (
       <li
         key={id}
-        className={`${
-          active === id
-            ? "orange-text-gradient"
-            : "text-white"
-        } hover:text-orange-600 text-[18px] font-medium cursor-pointer ${
+        className={`hover:text-orange-600 text-[18px] font-medium cursor-pointer ${
           toggle && "font-poppins text-[16px]"
         }`}
         onClick={() => {
-          setActive(id);
           setToggle(false);
         }}
       >
-        <Link to={`/#${id}`}>{title}</Link>
+        <a href={`#${id}`}>{title}</a>
       </li>
     );
   });
@@ -34,11 +28,10 @@ const Navbar = () => {
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
-        <Link
+        <NavLink
           to={"/"}
           className='flex items-center gap-2'
           onClick={() => {
-            setActive("");
             window.scrollTo(0, 0);
           }}
         >
@@ -55,12 +48,12 @@ const Navbar = () => {
               | Web Dev
             </span>
           </p>
-        </Link>
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        </NavLink>
+        <ul className='list-none hidden lg:flex flex-row gap-10'>
           {navList}
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='lg:hidden flex flex-1 justify-end items-center'>
           <img
             className='w-[28px] h-[28px]'
             src={toggle ? close : menu}
@@ -74,7 +67,7 @@ const Navbar = () => {
               toggle ? "flex" : "hidden"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
-            <ul className='list-none flex sm:hidden justify-end items-start flex-col gap-5'>
+            <ul className='list-none flex lg:hidden justify-end items-start flex-col gap-5'>
               {navList}
             </ul>
           </div>

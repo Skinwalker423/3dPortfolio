@@ -25,15 +25,16 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
-
+import leftovers from "./leftovers.png";
+import bubbles from "./bubbles.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 import artGonzLogo from "./art-gonzalez-logo.png";
 import artLogo from "./artLogo.png";
 
 export {
   logo,
+  bubbles,
   backend,
   creator,
   mobile,
@@ -60,7 +61,7 @@ export {
   tesla,
   carrent,
   jobit,
-  tripguide,
+  leftovers,
   artLogo,
   artGonzLogo,
 };

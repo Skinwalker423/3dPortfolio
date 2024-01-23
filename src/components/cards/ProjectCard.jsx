@@ -9,7 +9,7 @@ const ProjectCard = ({
   tags,
   image,
   index,
-  link = "/",
+  source_code_link = "/",
 }) => {
   return (
     <motion.div
@@ -31,7 +31,7 @@ const ProjectCard = ({
           />
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover '>
             <a
-              href={link}
+              href={source_code_link}
               target='_blank'
               rel='noopener noreferrer'
               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center'

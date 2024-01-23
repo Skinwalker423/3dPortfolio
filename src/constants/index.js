@@ -21,8 +21,9 @@ import {
   shopify,
   carrent,
   jobit,
-  tripguide,
+  leftovers,
   threejs,
+  bubbles,
 } from "../assets";
 
 export const navLinks = [
@@ -116,11 +117,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "Leftovers",
+    company_name: "Skinwalker423",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "DEC 2022 - OCT 2023",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -200,7 +201,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Leftovers",
     description:
       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
@@ -217,11 +218,12 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: leftovers,
+    source_code_link:
+      "https://github.com/Skinwalker423/Leftovers-nextjs",
   },
   {
-    name: "Job IT",
+    name: "Bubbles",
     description:
       "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
     tags: [
@@ -238,8 +240,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: bubbles,
+    source_code_link:
+      "https://github.com/Skinwalker423/bubbles",
   },
   {
     name: "Trip Guide",
@@ -259,7 +262,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: leftovers,
     source_code_link: "https://github.com/",
   },
 ];

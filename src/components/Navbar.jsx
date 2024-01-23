@@ -13,8 +13,10 @@ const Navbar = () => {
       <li
         key={id}
         className={`${
-          active === id ? "text-orange-500" : "text-white"
-        } hover:text-orange-500 text-[18px] font-medium cursor-pointer ${
+          active === id
+            ? "orange-text-gradient"
+            : "text-white"
+        } hover:text-orange-600 text-[18px] font-medium cursor-pointer ${
           toggle && "font-poppins text-[16px]"
         }`}
         onClick={() => {
@@ -47,9 +49,9 @@ const Navbar = () => {
             height={85}
             className='object-contain'
           />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex justify-center items-center gap-2'>
+          <p className='text-white text-[32px] font-bold cursor-pointer flex justify-center items-center gap-2'>
             Art Gonzalez
-            <span className='sm:block hidden orange-text-gradient'>
+            <span className='text-[32px] sm:block hidden orange-text-gradient'>
               | Web Dev
             </span>
           </p>

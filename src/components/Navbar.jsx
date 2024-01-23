@@ -41,11 +41,11 @@ const Navbar = () => {
           }}
         >
           <img
-            src={logo}
+            src={artLogo}
             alt='art gonzalez logo'
-            width={65}
-            height={65}
-            className='w-9 h-9 object-contain'
+            width={85}
+            height={85}
+            className='object-contain'
           />
           <p className='text-white text-[18px] font-bold cursor-pointer flex justify-center items-center gap-2'>
             Art Gonzalez

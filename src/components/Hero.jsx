@@ -6,7 +6,7 @@ import { slideIn } from "../utils/motion";
 
 const Hero = () => {
   return (
-    <section className='relative w-full h-screen mx-auto mt-20'>
+    <section className='relative w-full h-screen mt-20'>
       <StarsCanvas />
       <div
         className={`${styles.paddingX}  absolute inset-0 top-[150px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
@@ -33,7 +33,7 @@ const Hero = () => {
       </div>
       {/* <ComputersCanvas /> */}
       <motion.div
-        className='h-full px-8 rounded-2xl'
+        className='h-full'
         variants={slideIn("right", "tween", 0.2, 1)}
       >
         <EarthCanvas />

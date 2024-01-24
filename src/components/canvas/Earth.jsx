@@ -35,8 +35,8 @@ const Earth = ({ isMobile }) => {
       />
       <primitive
         object={earth.scene}
-        scale={isMobile ? 3.25 : 2.5}
-        position-y={0}
+        scale={isMobile ? 1 : 1}
+        position={isMobile ? [0, -0.75, 0] : [0, 0, 1]}
         rotation-y={0}
       />
     </mesh>

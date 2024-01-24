@@ -1,16 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import {
-  ComputersCanvas,
-  EarthCanvas,
-  StarsCanvas,
-} from "./canvas";
+import { EarthCanvas, StarsCanvas } from "./canvas";
 import { slideIn } from "../utils/motion";
 
 const Hero = () => {
   return (
-    <section className='relative w-full h-screen mx-auto'>
+    <section className='relative w-full h-screen mx-auto mt-20'>
       <StarsCanvas />
       <div
         className={`${styles.paddingX}  absolute inset-0 top-[150px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
@@ -37,13 +33,13 @@ const Hero = () => {
       </div>
       {/* <ComputersCanvas /> */}
       <motion.div
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px] p-8 rounded-2xl'
+        className='h-full px-8 rounded-2xl'
         variants={slideIn("right", "tween", 0.2, 1)}
       >
         <EarthCanvas />
       </motion.div>
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+      <div className='absolute xl:bottom-52 xs:bottom-32 bottom-10 w-full flex justify-center items-center'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div

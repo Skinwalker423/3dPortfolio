@@ -19,8 +19,6 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
   leftovers,
   threejs,
   bubbles,

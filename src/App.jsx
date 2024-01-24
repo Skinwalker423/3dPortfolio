@@ -9,6 +9,7 @@ import {
   StarsCanvas,
   Navbar,
 } from "./components";
+import Hero2 from "./components/Hero2";
 
 function App() {
   return (
@@ -24,7 +25,6 @@ function App() {
       <Feedbacks />
       <div className='relative z-0'>
         <Contact />
-        <StarsCanvas />
       </div>
 
       {/* <Routes>

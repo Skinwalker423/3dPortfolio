@@ -31,7 +31,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      {/* <ComputersCanvas /> */}
+
       <motion.div
         className='h-full'
         variants={slideIn("right", "tween", 0.2, 1)}

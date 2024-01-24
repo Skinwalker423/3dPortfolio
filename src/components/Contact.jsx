@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { ComputersCanvas, EarthCanvas } from "./canvas";
+import { ComputersCanvas } from "./canvas";
 import SectionWrapper from "../hoc/SectionWrapper";
 import { slideIn } from "../utils/motion";
 
@@ -114,10 +114,9 @@ const Contact = () => {
         </form>
       </motion.div>
       <motion.div
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px] p-8 rounded-2xl'
+        className='xl:flex-1  md:h-[550px] h-[350px] p-8 rounded-2xl'
         variants={slideIn("right", "tween", 0.2, 1)}
       >
-        {/* <EarthCanvas /> */}
         <ComputersCanvas />
       </motion.div>
     </div>
